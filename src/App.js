@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import SearchBar from './Components/SearchBar';
 import SearchResults from './Components/SearchResults';
+import {getPlaylist} from './Components/Playlist';
 
 function App() {
   const [value, setValue] = useState("");
   const [song, setSong] = useState([]);
+  const [artist, setArtist] = useState([]);
   const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`;
   const options = {
     method: 'GET',
@@ -27,9 +29,23 @@ function App() {
       });
   }
 
+  function getArtist() {
+    fetch(url, options)
+      .then(response => response.json())
+      .then(jsonResponse => {
+        const songArtist = jsonResponse.data.map(item => item.artist.name);
+        setArtist(songArtist);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
+  }
+
+
   function handleClick(e) {
     e.preventDefault();
     getSuggestions();
+    getArtist();
   }
 
   function handleChange(e) {
@@ -44,8 +60,7 @@ function App() {
   return (
     <div>
       <SearchBar value = {value} handleChange = {handleChange} handleClick = {handleClick}/>
-      <SearchResults song = {song}/>
-
+      <SearchResults song = {song} getPlaylist = {getPlaylist}/>
     </div>
   );
 }

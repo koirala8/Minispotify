@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function SearchResults(props) {
+
     return (
         <>
             <h2>Songs</h2>
@@ -15,6 +16,7 @@ export default function SearchResults(props) {
                             {props.album[index] && (
                                 <h6>{props.album[index]}</h6>
                             )}
+                            <button onClick={() => props.handlePlaylist(title, props.artist[index], props.album[index])}>Add</button>
                         </li>
                     ))}
                 </ul>

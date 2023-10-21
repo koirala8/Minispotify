@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import SearchBar from './Components/SearchBar';
+import SearchResults from './Components/SearchResults';
 
 function App() {
   const [value, setValue] = useState("");
@@ -41,20 +43,9 @@ function App() {
 
   return (
     <div>
-      <h1>Jamming</h1>
-      <form onSubmit={handleClick}>
-        <label htmlFor="searchInput">Search</label>
-        <input type="text" id="searchInput" value={value} onChange={handleChange} placeholder='Enter here...' />
-        <button type="submit">Search</button>
-      </form>
-      <h2>Songs</h2>
-      {song && (
-        <ul>
-          {song.map((title, index) => (
-            <li key={index}>{title}</li>
-          ))}
-        </ul>
-      )}
+      <SearchBar value = {value} handleChange = {handleChange} handleClick = {handleClick}/>
+      <SearchResults song = {song}/>
+
     </div>
   );
 }

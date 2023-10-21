@@ -7,7 +7,15 @@ export default function SearchResults(props) {
             {props.song && (
                 <ul>
                     {props.song.map((title, index) => (
-                        <li key={index}>{title}</li>
+                        <li key={index}>
+                            <strong>{title}</strong>
+                            {props.artist[index] && (
+                                <h6>{props.artist[index]}</h6>
+                            )}
+                            {props.album[index] && (
+                                <h6>{props.album[index]}</h6>
+                            )}
+                        </li>
                     ))}
                 </ul>
             )}

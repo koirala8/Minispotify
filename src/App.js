@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import SearchBar from './Components/SearchBar';
 import SearchResults from './Components/SearchResults';
-
+import Playlist from './Components/Playlist';
 function App() {
   const [value, setValue] = useState("");
   const [song, setSong] = useState([]);
+  const [artist, setArtist] = useState([]);
+  const [album, setAlbum] = useState([]);
+  const [playlist, setPlaylist] = useState([]);
   const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`;
   const options = {
     method: 'GET',
@@ -21,11 +24,16 @@ function App() {
       .then(jsonResponse => {
         const songTitles = jsonResponse.data.map(item => item.title);
         setSong(songTitles);
+        const songArtist = jsonResponse.data.map(item => item.artist.name);
+        setArtist(songArtist);
+        const songAlbum = jsonResponse.data.map(item => item.album.title);
+        setAlbum(songAlbum);
       })
       .catch(error => {
         console.error("Error fetching data:", error);
       });
   }
+
 
   function handleClick(e) {
     e.preventDefault();
@@ -37,17 +45,25 @@ function App() {
     setValue(newValue);
   }
 
-  useEffect(() => {
-    // You can do something when the component mounts here if needed
-  }, []);
+  function handlePlaylist(song_name, artist_name, album_name) {
+    const user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
+    setPlaylist((prevData) => [user_playlist, ...prevData]);
+  }
 
-  return (
-    <div>
-      <SearchBar value = {value} handleChange = {handleChange} handleClick = {handleClick}/>
-      <SearchResults song = {song}/>
 
-    </div>
-  );
+
+useEffect(() => {
+  // You can do something when the component mounts here if needed
+
+}, []);
+
+return (
+  <div>
+    <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
+    <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} />
+    <Playlist playlist={playlist} />
+  </div>
+);
 }
 
 export default App;

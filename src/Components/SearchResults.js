@@ -17,6 +17,8 @@ export default function SearchResults(props) {
                                 <h6>{props.album[index]}</h6>
                             )}
                             <button onClick={() => props.handlePlaylist(title, props.artist[index], props.album[index])}>Add</button>
+                            <button onClick={() => props.removePlaylist(title, props.artist[index], props.album[index])}>Remove</button>
+
                         </li>
                     ))}
                 </ul>

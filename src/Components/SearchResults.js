@@ -3,7 +3,7 @@ import React from "react";
 export default function SearchResults(props) {
 
     return (
-        <>
+        <div className="songs">
             <h2>Songs</h2>
             {props.song && (
                 <ul>
@@ -23,6 +23,6 @@ export default function SearchResults(props) {
                     ))}
                 </ul>
             )}
-        </>
+        </div>
     );
 }

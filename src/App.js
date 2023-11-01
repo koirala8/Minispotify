@@ -53,10 +53,10 @@ function App() {
   function removePlaylist(song_name, artist_name, album_name) {
     const remove_user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
     setPlaylist((prevData) =>
-
-      prevData.filter((item) => remove_user_playlist !== (item))
-
+      prevData.filter((item) => item !== remove_user_playlist)
     );
+  
+  
   }
 
 
@@ -68,7 +68,7 @@ function App() {
   }, [playlist]);
 
   return (
-    <div>
+    <div className="App">
       <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
       <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} removePlaylist={removePlaylist} />
       <Playlist playlist={playlist} />

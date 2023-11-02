@@ -1,3 +1,24 @@
 body {
+<<<<<<< HEAD
   background-color: lightblue;
+=======
+  background-color: lightskyblue;
+}
+
+.songs {
+  position: absolute;
+  left: 0px;
+  background-color: green;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  right: 0px;
+  background-color: white;
+  height: 100px;
+  width: 300px;
+>>>>>>> d6a7e44f2b7f0551b0ac9434c6c7680499aa0eff
 }

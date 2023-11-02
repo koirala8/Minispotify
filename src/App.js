@@ -50,20 +50,30 @@ function App() {
     setPlaylist((prevData) => [user_playlist, ...prevData]);
   }
 
+  function removePlaylist(song_name, artist_name, album_name) {
+    const remove_user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
+    setPlaylist((prevData) =>
+      prevData.filter((item) => item !== remove_user_playlist)
+    );
+  
+  
+  }
 
 
-useEffect(() => {
-  // You can do something when the component mounts here if needed
 
-}, []);
 
-return (
-  <div>
-    <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
-    <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} />
-    <Playlist playlist={playlist} />
-  </div>
-);
+  useEffect(() => {
+    // You can do something when the component mounts here if needed
+
+  }, [playlist]);
+
+  return (
+    <div className="App">
+      <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
+      <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} removePlaylist={removePlaylist} />
+      <Playlist playlist={playlist} />
+    </div>
+  );
 }
 
 export default App;

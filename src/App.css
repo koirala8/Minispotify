@@ -1,5 +1,5 @@
 body{
-  background-image: url('https://img.freepik.com/free-vector/colorful-equalizer-wave-background_52683-33072.jpg?w=996&t=st=1699569582~exp=1699570182~hmac=167acd46672e3eee360a022a67315be0ffd9d565372d098578c0917caf47fac3');
+  background-image: url('https://img.freepik.com/free-vector/abstract-background-with-wavy-colorful-shape_23-2148502140.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699228800&semt=ais');
 }
 .App .content{
   display: flex;
@@ -11,7 +11,6 @@ body{
 }
 
 .header h1{
-  display: flex;
   text-align: center;
   background-color: orange;
   font-size: 40px;
@@ -43,6 +42,7 @@ body{
   background-color: skyblue;
   width:40%;
   border-radius: 10px;
+  height: 90%;
 }
 .songs h1{
   color: white;
@@ -75,9 +75,11 @@ ul{
 .playlist{
   margin-top: 70px;
   margin-left: 240px;
+  margin-bottom: 10px;
   background-color: skyblue;
   width: 45%;
   border-radius: 10px;
+
 }
 
 .playlist h1{
@@ -87,6 +89,11 @@ ul{
 .playlist .my_song{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.playlist .my_song span{
+  margin-left: 15px;
 }
 
 .playlist button{

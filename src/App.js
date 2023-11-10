@@ -4,6 +4,7 @@ import SearchBar from './Components/SearchBar';
 import SearchResults from './Components/SearchResults';
 import Playlist from './Components/Playlist';
 function App() {
+  let isTrue = true;
   const [value, setValue] = useState("");
   const [song, setSong] = useState([]);
   const [artist, setArtist] = useState([]);
@@ -45,7 +46,10 @@ function App() {
 
   function handlePlaylist(song_name, artist_name, album_name) {
     const user_playlist = `${song_name} ${artist_name} ${album_name}`;
-    setPlaylist((prevData) => [user_playlist, ...prevData]);
+    if (!playlist.includes(user_playlist))
+    {
+      setPlaylist((prevData) => [user_playlist, ...prevData]);
+    }
   }
 
   function removePlaylist(playlist_song) {
@@ -56,9 +60,6 @@ function App() {
 
     );
   }
-
-
-
 
   useEffect(() => {
     // You can do something when the component mounts here if needed

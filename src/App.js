@@ -44,12 +44,12 @@ function App() {
   }
 
   function handlePlaylist(song_name, artist_name, album_name) {
-    const user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
+    const user_playlist = `${song_name} ${artist_name} ${album_name}`;
     setPlaylist((prevData) => [user_playlist, ...prevData]);
   }
 
-  function removePlaylist(song_name, artist_name, album_name) {
-    const remove_user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
+  function removePlaylist(playlist_song) {
+    const remove_user_playlist = playlist_song;
     setPlaylist((prevData) =>
 
     prevData.filter((item) => remove_user_playlist !== (item))
@@ -70,7 +70,7 @@ function App() {
         <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
         <div className="content">
           <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} removePlaylist={removePlaylist} />
-          <Playlist playlist={playlist} />
+          <Playlist playlist={playlist} removePlaylist = {removePlaylist}/>
         </div>
     </div>
     );

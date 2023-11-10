@@ -20,21 +20,19 @@ function App() {
 
   function getSuggestions() {
     fetch(url, options)
-      .then(response => response.json())
-      .then(jsonResponse => {
-        const songTitles = jsonResponse.data.map(item => item.title);
-        setSong(songTitles);
-        const songArtist = jsonResponse.data.map(item => item.artist.name);
-        setArtist(songArtist);
-        const songAlbum = jsonResponse.data.map(item => item.album.title);
-        setAlbum(songAlbum);
-      })
-      .catch(error => {
-        console.error("Error fetching data:", error);
-      });
+    .then(response => response.json())
+    .then(jsonResponse => {
+      const songTitles = jsonResponse.data.map(item => item.title);
+      setSong(songTitles);
+      const songArtist = jsonResponse.data.map(item => item.artist.name);
+      setArtist(songArtist);
+      const songAlbum = jsonResponse.data.map(item => item.album.title);
+      setAlbum(songAlbum);
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+    });
   }
-
-
   function handleClick(e) {
     e.preventDefault();
     getSuggestions();
@@ -54,7 +52,7 @@ function App() {
     const remove_user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
     setPlaylist((prevData) =>
 
-      prevData.filter((item) => remove_user_playlist !== (item))
+    prevData.filter((item) => remove_user_playlist !== (item))
 
     );
   }
@@ -66,14 +64,15 @@ function App() {
     // You can do something when the component mounts here if needed
 
   }, [playlist]);
-
   return (
-    <div>
-      <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
-      <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} removePlaylist={removePlaylist} />
-      <Playlist playlist={playlist} />
-    </div>
-  );
-}
+    <div className="App">
 
-export default App;
+        <SearchBar value={value} handleChange={handleChange} handleClick={handleClick} />
+        <div className="content">
+          <SearchResults song={song} artist={artist} album={album} handlePlaylist={handlePlaylist} removePlaylist={removePlaylist} />
+          <Playlist playlist={playlist} />
+        </div>
+    </div>
+    );
+  }
+  export default App;

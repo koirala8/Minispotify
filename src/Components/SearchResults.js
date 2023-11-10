@@ -4,25 +4,32 @@ export default function SearchResults(props) {
 
     return (
         <div className="songs">
-            <h2>Songs</h2>
-            {props.song && (
-                <ul>
-                    {props.song.map((title, index) => (
-                        <li key={index}>
-                            <strong>{title}</strong>
-                            {props.artist[index] && (
-                                <h6>{props.artist[index]}</h6>
-                            )}
-                            {props.album[index] && (
-                                <h6>{props.album[index]}</h6>
-                            )}
-                            <button onClick={() => props.handlePlaylist(title, props.artist[index], props.album[index])}>Add</button>
-                            <button onClick={() => props.removePlaylist(title, props.artist[index], props.album[index])}>Remove</button>
+            <h1>Songs</h1>
+            <div className="songs-list">
+                {props.song && (
+                    <ul>
+                        {props.song.map((title, index) => (
+                            <li key={index}>
+                                <div className="content-button">
+                                    <span className="song-name">{title}</span>
+                                
+                                    <button onClick={() => props.handlePlaylist(title, props.artist[index], props.album[index])}>Add</button>
+                                    <button onClick={() => props.removePlaylist(title, props.artist[index], props.album[index])}>Remove</button>
+                                </div>
+                                <div className="song-info">
+                                    {props.artist[index] && (
+                                        <span className="singer">{props.artist[index]}</span>
+                                    )}
+                                    {props.album[index] && (
+                                        <span className="album">{props.album[index]}</span>
+                                    )}
+                                </div>
 
-                        </li>
-                    ))}
-                </ul>
-            )}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
         </div>
     );
 }

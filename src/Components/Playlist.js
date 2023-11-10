@@ -1,14 +1,8 @@
-import React from "react";
-import { useState } from "react";
-export default function Playlist(props) 
-{
 
-    const [name, setName] = useState("");
-    function handlePlaylist(event) {
-        setName(event.value)
-    }
+export default function Playlist(props){
+
     return (
-        <div className="playlist">
-            <input type="text" id="playlist" value={name} onChange={handlePlaylist} placeholder='Playlist Name' />
-            <p>{`${props.playlist}`}</p></div>)
+        <div className="playlist"><h1>Playlist</h1>
+        <p>{props.playlist}</p></div>
+    );
 }

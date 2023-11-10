@@ -1,14 +1,10 @@
-body {
-  background-color: lightskyblue;
+body{
+  background-image: url('https://img.freepik.com/free-vector/colorful-equalizer-wave-background_52683-33072.jpg?w=996&t=st=1699569582~exp=1699570182~hmac=167acd46672e3eee360a022a67315be0ffd9d565372d098578c0917caf47fac3');
 }
-
-.songs {
-  position: absolute;
-  left: 0px;
-  background-color: green;
+.App .content{
+  display: flex;
 }
-
-.playlist {
+.header{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -21,4 +17,89 @@ body {
 
 .playlist p {
   text-align: right;
+  height: 100px;
+}
+
+.header h1{
+  display: flex;
+  justify-content: center;
+  background-color: orange;
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 2px;
+  border-radius: 1px;
+  padding: 5px;
+  color: oldlace;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.header .search-box{
+  display: flex;
+  justify-content: center;
+}
+
+.search-button{
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.songs{
+  margin: 70px 20px 10px 10px;
+  background-color: skyblue;
+  width:40%;
+  border-radius: 10px;
+}
+.songs h1{
+  color: white;
+  text-align: center;
+}
+
+.songs-list{
+  color: white;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.songs .songs-list ul li .song-name{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.songs .songs-list ul li .song-info
+{
+  display: block;
+  font-size: 10px;
+}
+
+.songs .songs-list ul li .song-info .album{
+  margin-left: 10px;
+}
+
+.playlist{
+  margin-top: 70px;
+  margin-left: 250px;
+  background-color: skyblue;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.content-button{
+  display: flex;
+  justify-content:space-between;
+}
+
+.content-button button{
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

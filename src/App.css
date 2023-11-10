@@ -12,7 +12,7 @@ body{
 
 .header h1{
   display: flex;
-  justify-content: center;
+  text-align: center;
   background-color: orange;
   font-size: 40px;
   font-weight: 800;
@@ -74,10 +74,29 @@ ul{
 
 .playlist{
   margin-top: 70px;
-  margin-left: 250px;
+  margin-left: 240px;
   background-color: skyblue;
-  width: 40%;
+  width: 45%;
   border-radius: 10px;
+}
+
+.playlist h1{
+  color: white;
+  text-align: center;
+}
+.playlist .my_song{
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlist button{
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .content-button{
@@ -92,4 +111,5 @@ ul{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 10px;
 }

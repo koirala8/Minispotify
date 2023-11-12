@@ -12,7 +12,6 @@ export default function SearchResults(props) {
                             <li key={index}>
                                 <div className="content-button">
                                     <span className="song-name">{title}</span>
-                                
                                     <button onClick={() => props.handlePlaylist(title, props.artist[index], props.album[index])}>Add</button>
                                 </div>
                                 <div className="song-info">

@@ -45,7 +45,10 @@ function App() {
 
   function handlePlaylist(song_name, artist_name, album_name) {
     const user_playlist = `${song_name} ${artist_name} ${album_name}`;
-    setPlaylist((prevData) => [user_playlist, ...prevData]);
+    if (!playlist.includes(user_playlist))
+    {
+      setPlaylist((prevData) => [user_playlist, ...prevData]);
+    }
   }
 
   function removePlaylist(playlist_song) {

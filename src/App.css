@@ -42,7 +42,7 @@ body{
   background-color: skyblue;
   width:40%;
   border-radius: 10px;
-  height: 90%;
+  min-height: 500px;
 }
 .songs h1{
   color: white;
@@ -76,6 +76,7 @@ ul{
   margin-top: 70px;
   margin-left: 240px;
   margin-bottom: 10px;
+  margin-right: 10px;
   background-color: skyblue;
   width: 45%;
   border-radius: 10px;

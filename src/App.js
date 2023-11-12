@@ -48,12 +48,10 @@ function App() {
     setPlaylist((prevData) => [user_playlist, ...prevData]);
   }
 
-  function removePlaylist(song_name, artist_name, album_name) {
-    const remove_user_playlist = `${song_name} by ${artist_name} from ${album_name}`;
+  function removePlaylist(music) {
+    const remove_user_playlist = music;
     setPlaylist((prevData) =>
-
-    prevData.filter((item) => remove_user_playlist !== (item))
-
+      prevData.filter((item) => remove_user_playlist !== item)
     );
   }
 

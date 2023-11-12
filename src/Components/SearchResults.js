@@ -14,7 +14,6 @@ export default function SearchResults(props) {
                                     <span className="song-name">{title}</span>
                                 
                                     <button onClick={() => props.handlePlaylist(title, props.artist[index], props.album[index])}>Add</button>
-                                    <button onClick={() => props.removePlaylist(title, props.artist[index], props.album[index])}>Remove</button>
                                 </div>
                                 <div className="song-info">
                                     {props.artist[index] && (

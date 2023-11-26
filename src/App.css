@@ -42,7 +42,9 @@ body{
   background-color: skyblue;
   width:40%;
   border-radius: 10px;
-  height: 90%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  height: 90vh;
 }
 .songs h1{
   color: white;
@@ -51,6 +53,7 @@ body{
 
 .songs-list{
   color: white;
+  height: 90%;
 }
 
 ul{

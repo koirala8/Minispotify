@@ -44,7 +44,7 @@ body{
   border-radius: 10px;
   border: 1px solid #ccc;
   overflow: hidden;
-  height: 90vh;
+  min-height: 500px;
 }
 .songs h1{
   color: white;
@@ -79,6 +79,7 @@ ul{
   margin-top: 70px;
   margin-left: 240px;
   margin-bottom: 10px;
+  margin-right: 10px;
   background-color: skyblue;
   width: 45%;
   border-radius: 10px;
@@ -109,6 +110,13 @@ ul{
   margin-right: 10px;
 }
 
+.playlist h1{
+  text-align: center;
+}
+
+.playlist p span{
+  display: block;
+}
 .content-button{
   display: flex;
   justify-content:space-between;

@@ -4,7 +4,6 @@ import SearchBar from './Components/SearchBar';
 import SearchResults from './Components/SearchResults';
 import Playlist from './Components/Playlist';
 function App() {
-  let isTrue = true;
   const [value, setValue] = useState("");
   const [song, setSong] = useState([]);
   const [artist, setArtist] = useState([]);
@@ -60,6 +59,9 @@ function App() {
 
     );
   }
+
+
+
 
   useEffect(() => {
     // You can do something when the component mounts here if needed
